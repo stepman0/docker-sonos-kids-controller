@@ -11,8 +11,6 @@ RUN npm install -g @ionic/cli
 ## Install dependencies
 COPY src/package.json /sonos-kids-controller/package.json
 RUN npm install 
-# Workaround for missing dependency in package.json
-RUN npm install express
 
 ## Copy source code
 COPY src /sonos-kids-controller
@@ -30,8 +28,6 @@ WORKDIR /sonos-kids-controller
 ## Install dependencies
 COPY src/package.json /sonos-kids-controller/package.json
 RUN npm install --production
-# Workaround for missing dependency in package.json
-RUN npm install express
 
 ## Copy source code
 COPY src /sonos-kids-controller
