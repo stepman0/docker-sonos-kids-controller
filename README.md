@@ -35,7 +35,7 @@ services:
     restart: unless-stopped
     network_mode: host
     volumes:
-      - ./api/settings:/app/settings
+      - ./api/settings.json:/app/settings.json
       - ./api/clips:/app/static/clips
       - ./api/cache:/app/cache
       - ./api/presets:/app/presets
