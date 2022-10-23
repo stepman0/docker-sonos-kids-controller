@@ -1,7 +1,7 @@
 #####
 # Stage 1: Build ionic
 #####
-FROM node:16-alpine as build
+FROM node:16 as build
 
 WORKDIR /sonos-kids-controller
 
