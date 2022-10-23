@@ -6,16 +6,18 @@ services:
     restart: unless-stopped
     network_mode: host
     volumes:
-      - ./api/settings.json:/app/settings.json
-      - ./api/clips:/app/static/clips
-      - ./api/cache:/app/cache
-      - ./api/presets:/app/presets
+      - ./data/api/settings/settings.json:/app/settings.json
+      - ./data/api/clips:/app/static/clips
+      - ./data/api/cache:/app/cache
+      - ./data/api/presets:/app/presets
 
   controller:
     image: "stepman0/sonos-kids-controller"
     restart: unless-stopped
-    network_mode: bridge
-    ports:
-      - 8200:8200
+    network_mode: host
+#    network_mode: bridge
+#    ports:
+#      - 8200:8200
     volumes:
-      - ./controller/config:/sonos-kids-controller/server/config/
+      - ./data/controller/config:/sonos-kids-controller/server/config/
+      - ./data/controller/logs:/home/node/.npm/_logs/
