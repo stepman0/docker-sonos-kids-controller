@@ -1,4 +1,4 @@
-data/controller/config/data.json
-data/controller/config/config.json
-data/controller/config/config.json.bak
+data/controller/data.json
+data/controller/config.json
+data/controller/config.json.bak
 data/api/settings.json
