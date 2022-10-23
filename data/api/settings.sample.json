@@ -1,0 +1,9 @@
+{
+    "voicerss": "TO-BE-FILLED",
+    "announceVolume": 40,
+    "spotify": {
+      "clientId": "TO-BE-FILLED",
+      "clientSecret": "TO-BE-FILLED"
+    }
+}
+
