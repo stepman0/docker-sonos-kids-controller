@@ -54,3 +54,30 @@ services:
 7. Setup local chromium (see instructions above)
 
 ToDo: Add Chromium Kiosk in docker container.
+
+## Known issues
+
+If your container starts crashes with the following logs:
+
+```
+ #
+ # Fatal error in , line 0
+ # unreachable code
+ #
+ #
+ #
+ #FailureMessage Object: 0x.....
+
+```
+
+you need to upgrade libseccomp2. This issue arises from the Alpine base image - check [here](https://blog.samcater.com/fix-workaround-rpi4-docker-libseccomp2-docker-20/)
+
+Run these commands on your Raspberry:
+```
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 04EE7237B7D453EC 648ACFD622F3D138
+
+echo 'deb http://httpredir.debian.org/debian buster-backports main contrib non-free' | sudo tee -a /etc/apt/sources.list.d/debian-backports.list
+
+sudo apt update
+sudo apt install libseccomp2 -t buster-backports
+```
