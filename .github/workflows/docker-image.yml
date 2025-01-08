@@ -54,7 +54,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
     
     - name: build+push
-      uses: docker/build-push-action@v6.9.0
+      uses: docker/build-push-action@v6.11.0
       with:
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
